@@ -48,13 +48,12 @@ export default function Page() {
         <li>Maghrib: {data.maghrib}</li>
         <li>Isya: {data.isha}</li>
       </ul>
-
-<small>
+<p style={{ fontSize: "12px", color: "#666", marginTop: "12px" }}>
   Update terakhir:{" "}
   {new Date(data.updated_at).toLocaleString("id-ID", {
     timeZone: "Asia/Jakarta"
   })}
-</small>
+</p>
     </main>
   );
 }
