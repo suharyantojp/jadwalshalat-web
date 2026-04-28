@@ -49,7 +49,12 @@ export default function Page() {
         <li>Isya: {data.isha}</li>
       </ul>
 
-      <small>Update terakhir: {data.updated_at}</small>
+<small>
+  Update terakhir:{" "}
+  {new Date(data.updated_at).toLocaleString("id-ID", {
+    timeZone: "Asia/Jakarta"
+  })}
+</small>
     </main>
   );
 }
