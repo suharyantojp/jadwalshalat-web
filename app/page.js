@@ -16,12 +16,13 @@ export default function Page() {
     async function loadPrayerTimes() {
       const today = new Date().toISOString().slice(0, 10);
 
-      const { data, error } = await supabase
-        .from("prayer_times")
-        .select("*")
-        .eq("city", "Bekasi")
-        .eq("prayer_date", today)
-        .single();
+const { data, error } = await supabase
+  .from("prayer_times_logs")
+  .select("*")
+  .eq("city", "Bekasi")
+  .order("created_at", { ascending: false })
+  .limit(1)
+  .single();
 
       if (!error) setData(data);
       setLoading(false);
