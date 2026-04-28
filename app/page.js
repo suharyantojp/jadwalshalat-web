@@ -13,22 +13,23 @@ export default function Page() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function loadPrayerTimes() {
-      const today = new Date().toISOString().slice(0, 10);
+    async function loadLatestPrayerTime() {
+      const { data, error } = await supabase
+        .from("prayer_times_logs")
+        .select("*")
+        .eq("city", "Bekasi")
+        .order("created_at", { ascending: false })
+        .limit(1)
+        .single();
 
-const { data, error } = await supabase
-  .from("prayer_times_logs")
-  .select("*")
-  .eq("city", "Bekasi")
-  .order("created_at", { ascending: false })
-  .limit(1)
-  .single();
+      if (!error) {
+        setData(data);
+      }
 
-      if (!error) setData(data);
       setLoading(false);
     }
 
-    loadPrayerTimes();
+    loadLatestPrayerTime();
   }, []);
 
   if (loading) {
@@ -72,8 +73,9 @@ const { data, error } = await supabase
         <h1 style={{ fontSize: "24px", marginBottom: "4px" }}>
           Jadwal Shalat
         </h1>
+
         <p style={{ color: "#94a3b8", marginBottom: "24px" }}>
-          Bekasi
+          {data.city}
         </p>
 
         <div style={{ display: "grid", gap: "12px" }}>
@@ -111,13 +113,12 @@ const { data, error } = await supabase
           }}
         >
           Update terakhir:{" "}
-          {data.updated_at
-            ? new Date(data.updated_at).toLocaleString("id-ID", {
-                timeZone: "Asia/Jakarta"
-              })
-            : "-"}
+          {new Date(data.created_at).toLocaleString("id-ID", {
+            timeZone: "Asia/Jakarta"
+          })}
         </p>
       </div>
     </div>
   );
 }
+``
