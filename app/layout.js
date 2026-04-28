@@ -1,12 +1,12 @@
 export const metadata = {
   title: "Jadwal Shalat",
-  description: "Aplikasi jadwal shalat harian"
+  description: "Jadwal shalat harian berbasis Cloudflare Workers & Supabase"
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="id">
-      <body>{children}</body>
+      <body style={{ margin: 0 }}>{children}</body>
     </html>
   );
 }
