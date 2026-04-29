@@ -209,27 +209,46 @@ export default function Page() {
           margin: "0 auto"
         }}
       >
-        <div style={{ marginBottom: "24px" }}>
-          <h1
-            style={{
-              margin: 0,
-              color: "#0f172a",
-              fontSize: "32px",
-              fontWeight: 800
-            }}
-          >
-            Dashboard Masjid
-          </h1>
-          <p
-            style={{
-              margin: "8px 0 0 0",
-              color: "#64748b",
-              fontSize: "15px"
-            }}
-          >
-            Jadwal shalat dan laporan kas masjid
-          </p>
-        </div>
+    <div
+  style={{
+    display: "flex",
+    alignItems: "center",
+    gap: "16px",
+    marginBottom: "24px"
+  }}
+>
+  <img
+    src="public/logo-masjid.png"
+    alt="Logo Masjid"
+    style={{
+      width: "64px",
+      height: "64px",
+      objectFit: "contain"
+    }}
+  />
+
+  <div>
+    <h1
+      style={{
+        margin: 0,
+        color: "#0f172a",
+        fontSize: "32px",
+        fontWeight: 800
+      }}
+    >
+      Dashboard Masjid
+    </h1>
+    <p
+      style={{
+        margin: "8px 0 0 0",
+        color: "#64748b",
+        fontSize: "15px"
+      }}
+    >
+      Jadwal shalat dan laporan kas masjid
+    </p>
+  </div>
+</div>
 
         <div
           style={{
