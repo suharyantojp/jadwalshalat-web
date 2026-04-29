@@ -244,7 +244,41 @@ export default function Page() {
               flex: "1 1 360px",
               maxWidth: "420px"
             }}
-          >
+          ><div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "16px" }}>
+  <img
+    src="/logo-masjid.png"
+    alt="Logo Masjid"
+    style={{
+      width: "56px",
+      height: "56px",
+      objectFit: "contain",
+      borderRadius: "12px",
+      background: "#ffffff"
+    }}
+  />
+
+  <div>
+    <h1
+      style={{
+        margin: 0,
+        color: "#0f172a",
+        fontSize: "32px",
+        fontWeight: 800
+      }}
+    >
+      Dashboard Masjid
+    </h1>
+    <p
+      style={{
+        margin: "8px 0 0 0",
+        color: "#64748b",
+        fontSize: "15px"
+      }}
+    >
+      Jadwal shalat dan laporan kas masjid
+    </p>
+  </div>
+</div>
             <PageSection
               title="Jadwal Shalat"
               subtitle={prayerData ? prayerData.city : "Bekasi"}
