@@ -218,7 +218,7 @@ export default function Page() {
   }}
 >
   <img
-    src="public/logo-masjid.png"
+    src="/public/logo-masjid.png"
     alt="Logo Masjid"
     style={{
       width: "64px",
